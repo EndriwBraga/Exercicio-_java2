@@ -2,7 +2,6 @@ package application;
 
 import java.util.Locale;
 import java.util.Scanner;
-
 import Entities.Product;
 
 public class Program {
@@ -12,18 +11,18 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Product product = new Product();
-		
 		System.out.println("Enter product data: ");
 		
 		System.out.print("Name: ");
-		product.name = sc.nextLine();
+		String name = sc.nextLine();
 		
 		System.out.print("Price: ");
-		product.price = sc.nextDouble();
+		double price = sc.nextDouble();
 		
 		System.out.print("Quantity in stock: ");
-		product.quantity = sc.nextInt();
+		int quantity = sc.nextInt();
+		
+		Product product = new Product(name, price, quantity);
 		
 		System.out.println();
 		System.out.print("Product data: " + product);
@@ -32,7 +31,7 @@ public class Program {
 		System.out.println();
 		System.out.print("Enter the number of products to be added in stock: ");
 		
-		int quantity = sc.nextInt();
+		quantity = sc.nextInt();
 		product.addProducts(quantity);
 		
 		System.out.println();
